@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+    <!-- 회원 -->
+    <query id="insertMember">
+        INSERT INTO Member(member_id, name, email, phone, join_date)
+        VALUES(seq_member.NEXTVAL, ?, ?, ?, SYSDATE)
+    </query>
+
+    <query id="selectMemberById">
+        SELECT * FROM Member WHERE member_id = ?
+    </query>
+
+    <!-- 영화 -->
+    <query id="selectAllMovies">
+        SELECT * FROM Movie
+    </query>
+
+    <!-- 상영 시간 -->
+    <query id="selectScreeningsByMovieId">
+        SELECT sc.screening_id, s.name AS screen_name, sc.screening_time
+        FROM Screening sc
+        JOIN Screen s ON sc.screen_id = s.screen_id
+        WHERE sc.movie_no = ?
+    </query>
+
+    <!-- 예매 -->
+    <query id="insertBooking">
+        INSERT INTO Booking(booking_id, member_id, screening_id, seat_number, booking_date)
+        VALUES(seq_booking.NEXTVAL, ?, ?, ?, SYSDATE)
+    </query>
+</queries>

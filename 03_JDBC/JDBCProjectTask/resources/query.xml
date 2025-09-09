@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+    <!-- 상품 관련 -->
+    <query id="selectAllProducts">
+        SELECT PRODUCT_ID, NAME, CATEGORY, COST, STOCK, SOLD_OUT
+        FROM PRODUCT
+        ORDER BY PRODUCT_ID
+    </query>
+
+    <query id="insertProduct">
+        INSERT INTO PRODUCT(PRODUCT_ID, NAME, CATEGORY, COST, STOCK, SOLD_OUT)
+        VALUES(PRODUCT_SEQ.NEXTVAL, ?, ?, ?, ?, ?)
+    </query>
+
+    <query id="updateProduct">
+        UPDATE PRODUCT
+        SET NAME=?, CATEGORY=?, COST=?, STOCK=?, SOLD_OUT=?
+        WHERE PRODUCT_ID=?
+    </query>
+
+    <query id="deleteProduct">
+        DELETE FROM PRODUCT WHERE PRODUCT_ID=?
+    </query>
+
+    <!-- 주문 관련 -->
+    <query id="insertOrder">
+        INSERT INTO ORDERS(ORDER_ID, ORDER_DATE)
+        VALUES(ORDERS_SEQ.NEXTVAL, SYSDATE)
+    </query>
+
+    <query id="insertOrderItem">
+        INSERT INTO ORDER_ITEM(ORDER_ID, PRODUCT_ID, QUANTITY, PRICE)
+        VALUES(?, ?, ?, ?)
+    </query>
+
+    <query id="updateStock">
+        UPDATE PRODUCT
+        SET STOCK = STOCK - ?
+        WHERE PRODUCT_ID=?
+    </query>
+</queries>
