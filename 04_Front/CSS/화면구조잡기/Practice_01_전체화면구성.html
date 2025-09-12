@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li,
+        ol {
+            list-style: none;
+        }
+
+        .header {
+            border: 1.5px solid rgb(233, 231, 231);
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #logo img {
+            align-items: left;
+        }
+
+        .search-button {
+            width: 150px;
+            height: 30px;
+        }
+
+        /* #button-img {} */
+
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu>ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .third {
+            display: flex;
+        }
+
+        #login-area {
+            display: flex;
+        }
+
+        #Idpwd {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div id="logo"><img src="./실습이미지/logo.PNG" alt=""></div>
+        <div id="search">
+            <input type="text" placeholder="검색어를 입력하세요">
+            <button class="search-button"><img src="./실습이미지/search.png" alt="" id="button-img"></button>
+        </div>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li>교육과정</li>
+            <li>교육원소개</li>
+            <li>취업지원센터</li>
+            <li>신학연계</li>
+            <li>상담센터</li>
+        </ul>
+    </div>
+
+    <div class="third">
+        <div id="ad">
+            <img src="./실습이미지/banner.PNG" alt="">
+        </div>
+        <div id="login-area">
+            <input type="text" placeholder="아이디를 입력하세요">
+            <input type="password" placeholder="비밀번호를 입력하세요">
+
+            <div><input type="button" value="로그인"></div>
+            <div id="Idpwd">
+                <a href="">아이디 찾기</a>
+                <a href="">비밀번호 찾기</a>
+                <a href="">회원가입</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
