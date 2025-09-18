@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Practice2</h1>
+    <div style="display: flex; gap: 8px;" id="math">
+        <input type="number" id="num1">
+        <select id="operation">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <input type="number" id="num2">
+        <button onclick="operation()">=</button>
+        <script>
+            function operation() {
+                let num1 = parseInt(document.getElementById("num1").value);
+                let num2 = parseInt(document.getElementById("num2").value);
+                let operation = document.getElementById("operation");
+
+                console.log(operation.value);
+
+                if (operation.value == "plus") {
+                    document.getElementById("result").innerHTML = num1 + num2;
+                    // return num1 + num2;}
+                }
+                else if (operation.value == "minus") {
+                    document.getElementById("result").innerHTML = num1 - num2;
+                    // return num1 + num2;}
+                }
+                else if (operation.value == "multiply") {
+                    document.getElementById("result").innerHTML = num1 * num2;
+                    // return num1 + num2;}
+                }
+                else if (operation.value == "divide") {
+                    document.getElementById("result").innerHTML = num1 / num2;
+                    // return num1 + num2;}
+                }
+                if (operation.value == "divide" && num2 == 0) {
+                    // document.getElementById("result").innerHTML = "<style> background: red;</style>";
+                    result.style.background = "red";
+                    result.style.color = "white";
+                    document.getElementById("result").innerHTML = "연산불가";
+                }
+            }
+        </script>
+        <div id="result" style="border: 1px solid black; width: 100px; height: 30px;"></div>
+    </div>
+</body>
+
+</html>
