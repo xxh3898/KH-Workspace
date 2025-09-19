@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,15 +22,40 @@
             <input type="radio" name="select" onclick="selectOption()" value="writer">작성자
         </div>
     </fieldset>
-    <div id="result"></div>
+
+    <!-- 체크되면 나올 박스 -->
+    <div id="result" style="height: 100px; margin-top: 40px;"></div>
 </body>
 
 <script>
     function selectOption() {
+        let resultBox = document.getElementById("result");
         let radios = document.getElementsByName("select");
-        for (let r of radios) {
+        // 초기화용
+        resultBox.innerHTML = "";
+        resultBox.style.background = "";
+
+        for (let r of radios) { //반복문을 돌려 체크된 라디오 확인
             if (r.checked) {
+                resultBox.style.background = "gray"; //배경색을 바꿔 나온 것처럼 표현(?)
                 console.log(r.value);
+                if (r.value == "title") {
+                    resultBox.innerHTML = "검색할 제목을 입력하세요 : <br>";
+                    resultBox.innerHTML += '<input type="text" style="width: 80%;">';
+                    resultBox.innerHTML += '<button style="margin-left: 20px;">검색</button>';
+                }
+
+                if (r.value == "date") {
+                    resultBox.innerHTML = "검색할 날짜를 선택하세요 : <br>";
+                    resultBox.innerHTML += '<input type="date"> - <input type="date">';
+                    resultBox.innerHTML += '<button style="margin-left: 20px;">검색</button>';
+                }
+
+                if (r.value == "writer") {
+                    resultBox.innerHTML = "검색할 작성자 아이디를 선택하세요 : <br>";
+                    resultBox.innerHTML += '<input type="text">';
+                    resultBox.innerHTML += '<button style="margin-left: 20px;">검색</button>';
+                }
             }
         }
     }
