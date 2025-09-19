@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Practice5</h1>
+    <fieldset style="text-align: center;">
+        <legend>검색할 항목을 선택하세요.</legend>
+        <div>
+            <input type="radio" name="select" onclick="selectOption()" value="title">제목
+            <input type="radio" name="select" onclick="selectOption()" value="date">날짜
+            <input type="radio" name="select" onclick="selectOption()" value="writer">작성자
+        </div>
+    </fieldset>
+    <div id="result"></div>
+</body>
+
+<script>
+    function selectOption() {
+        let radios = document.getElementsByName("select");
+        for (let r of radios) {
+            if (r.checked) {
+                console.log(r.value);
+            }
+        }
+    }
+</script>
+
+</html>

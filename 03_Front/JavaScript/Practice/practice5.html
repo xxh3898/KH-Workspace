@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Practice4</h1>
+    <fieldset style="width: 400px;">
+        <legend>구매 정보</legend>
+        <ul>
+            <li>구매자 : <input type="text" id="name" placeholder="구매자의 이름을 입력하세요."></li>
+            <li>상품명 : <input type="text" id="pName" placeholder="구매 상품명을 입력하세요."></li>
+            <li>가격 : <input type="number" id="price" placeholder="구매 가격을 입력하세요."></li>
+            <li>구매 수량 : <input type="number" id="count" min="10" max="100" placeholder="최소 10"></li>
+            <li>납품 등급 : <input type="range" id="grade" value="1" min="1" max="9" step="2"></li>
+            <li>기타 사항 : <textarea style="height: 70px;" id="etc"></textarea></li>
+        </ul>
+    </fieldset>
+    <button style="margin-top: 20px; margin-bottom: 20px;" onclick="present()">입력 값 출력하기</button>
+    <div style="border: 1px solid black; height: 150px; width: 300px;" id="pre"></div>
+
+    <script>
+        let str = "";
+        function present() {
+            let buyer = document.getElementById('name').value;
+            str += "구매자 명 : " + buyer + "<br>";
+
+            let productName = document.getElementById('pName').value;
+            str += "상품명 : " + productName + "<br>";
+
+            let pPrice = document.getElementById('price').value;
+            str += "가격 : " + pPrice + "만원<br>";
+
+            let pCount = document.getElementById('count').value;
+            if (pCount > 100) {
+                document.getElementById('pre').innerHTML = "구매수량 최대 100";
+                document.getElementById('pre').style.background = "red";
+                document.getElementById('pre').style.color = "white";
+            } else {
+                str += "구매수량 : " + pCount + "개<br>";
+
+                let pGrade = document.getElementById('grade').value;
+                str += "납품등급 : " + pGrade + "등급<br>";
+
+                let pEtc = document.getElementById('etc').value;
+                str += "기타사항 : " + pEtc + "<br>";
+
+                document.getElementById('pre').innerHTML = str;
+            }
+        }
+    </script>
+</body>
+
+</html>
