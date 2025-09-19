@@ -26,6 +26,7 @@
             <option value="minus">-</option>
             <option value="multiply">*</option>
             <option value="divide">/</option>
+            <option value="per">%</option>
         </select>
         <input type="number" id="num2">
         <button onclick="operation()">=</button>
@@ -43,21 +44,24 @@
                 }
                 else if (operation.value == "minus") {
                     document.getElementById("result").innerHTML = num1 - num2;
-                    // return num1 + num2;}
                 }
                 else if (operation.value == "multiply") {
                     document.getElementById("result").innerHTML = num1 * num2;
-                    // return num1 + num2;}
                 }
                 else if (operation.value == "divide") {
                     document.getElementById("result").innerHTML = num1 / num2;
-                    // return num1 + num2;}
                 }
-                if (operation.value == "divide" && num2 == 0) {
+                else if (operation.value == "per") {
+                    document.getElementById("result").innerHTML = num1 % num2;
+                }
+                if ((operation.value == "per" || operation.value == "divide") && num2 == 0) {
                     // document.getElementById("result").innerHTML = "<style> background: red;</style>";
                     result.style.background = "red";
                     result.style.color = "white";
                     document.getElementById("result").innerHTML = "연산불가";
+                } else { //기능 추가
+                    result.style.background = "white";
+                    result.style.color = "black";
                 }
             }
         </script>
