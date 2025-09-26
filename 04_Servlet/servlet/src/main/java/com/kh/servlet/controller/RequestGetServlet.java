@@ -10,11 +10,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * @WebServlet 어노테이션을 통해 해당 객체가 서블릿이며 /gettest.do로 요청을 받으면 실행해줄 
- * ervlet이라는 맵핑을 진행함.
+ * @WebServlet 어노테이션을 통해 해당 객체가 서블릿이며 /gettest.do로 요청을 받으면 실행해줄 servlet이라는 맵핑을
+ * 진행함.
  *
- * http://localhost:8001/servlet/gettest.do로 요청시 응답하는 서블릿 servlet의 
- * 청경로는 contextPath뒤에 작성된다.
+ * http://localhost:8001/servlet/gettest.do로 요청시 응답하는 서블릿 servlet의 요청경로는
+ * contextPath뒤에 작성된다.
  */
 @WebServlet("/gettest.do")
 public class RequestGetServlet extends HttpServlet {
