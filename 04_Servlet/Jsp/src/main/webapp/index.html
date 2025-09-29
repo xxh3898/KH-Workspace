@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <h1>JSP</h1>
+    <p>
+        HTML 문서 안에서 JAVA코드를 직접 작성할 수 있는 기술 <br>
+        - Sevlet에서 응답화면(HTML)을 만드는 복잡한 과정을 단순화. <br>
+        - 비즈니스 로직은 Servlet에서, 화면(View)는 JSP에서 담당 -> 역학분리(MVC패턴의 기초) <br>
+        - 내부적으로는 JSP -> Servlet으로 변환 후 동작 <br>
+        - 내장 객체 제공 : request(요청정보를 저장해둔 객체), rsponse(응답에 필요한 정보를 저장해둔 객체), session(브라우저 별로 만들어둔 서버 저장소) 등
+    </p>
+
+    <h2>JSP 요소(Element)표현법</h2>
+
+    <h3>JSP 스크립트 원소</h3>
+    <p>JSP페이지에서 자바코드를 기술할 수 있는 기능</p>
+
+    <ol>
+        <li>
+            스크립틀릿 : <% 자바코드 %> <br>
+            JSP에서 자바코드를 기술하기 위한 가장 기본적인 방법
+        </li>
+        <li>
+            표현식(출력식) : <%= 변수 %> <br>
+            자바에 저장되어있는 값을 화면상에 출력하기위한 방법
+        </li>
+    </ol>
+
+    <a href="./views/01_scripting_element.jsp">view</a>
+</body>
+</html>
