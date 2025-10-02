@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="showBoard">
+		SELECT
+		BOARD_NO,
+		BOARD_TYPE,
+		CATEGORY_NO,
+		BOARD_TITLE,
+		BOARD_CONTENT,
+		BOARD_WRITER,
+		COUNT,
+		CREATE_DATE,
+		STATUS
+		FROM BOARD
+		WHERE STATUS = 'Y'
+		ORDER BY BOARD_NO DESC
+
+	</entry>
+</properties>
